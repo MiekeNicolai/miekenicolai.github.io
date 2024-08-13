@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Mieke Nicolaï</title>
+    <style>
+        body {
+            background-color: #D7DBDD;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+
+        .main-content {
+            padding: 20px;
+            color: black;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 40px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav style="background-color: #333; padding: 10px 0; text-align: center;">
+        <a href="index.html" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+        <a href="resume.html" style="color: white; margin: 0 15px; text-decoration: none;">Resume</a>
+        <a href="contact.html" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
+        <a href="extra.html" style="color: white; margin: 0 15px; text-decoration: none;">Extra</a>
+    </nav>
+
+    <div class="main-content" id="resume-content">
+        <!-- The resume content from the markdown file will be injected here -->
+        Loading resume...
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        // Fetch the resume.md file
+        fetch('resume.md')
+            .then(response => response.text())
+            .then(text => {
+                // Convert the markdown to HTML using marked.js
+                const markdownContent = marked(text);
+                // Inject the converted HTML into the resume-content div
+                document.getElementById('resume-content').innerHTML = markdownContent;
+            })
+            .catch(error => {
+                console.error('Error fetching the markdown file:', error);
+                document.getElementById('resume-content').innerHTML = 'Failed to load resume.';
+            });
+    </script>
+</body>
+</html>
