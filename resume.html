@@ -74,29 +74,11 @@
     </div>
 
     <!-- Include Marked and Axios libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            axios.get('resume.md')
-                .then(response => {
-                    // Check if response contains data
-                    if (response.data) {
-                        // Convert Markdown to HTML
-                        const htmlContent = marked(response.data);
-
-                        // Insert the HTML into the main content div
-                        document.getElementById('resume-content').innerHTML = htmlContent;
-                    } else {
-                        console.error('No content in resume.md');
-                        document.getElementById('resume-content').innerHTML = '<p>Error loading content.</p>';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading resume.md:', error);
-                    document.getElementById('resume-content').innerHTML = '<p>Error loading content.</p>';
-                });
-        });
-    </script>
+    <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+    <!-- Load the element definition -->
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+    <!-- Simply set the `src` attribute to your MD file and win -->
+    <zero-md src="resume.md"></zero-md>
 </body>
 </html>
