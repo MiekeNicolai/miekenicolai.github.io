@@ -31,9 +31,20 @@
         <a href="extra.html" style="color: white; margin: 0 15px; text-decoration: none;">Extra</a>
     </nav>
 
-    <div class="main-content" id="resume-content">
-        Loading resume...
+    <div class="main-content">
+        <textarea id="markdown-content" style="display:none;">
+            # John Doe's Resume
+
+            ## Experience
+            - Software Developer at Example Corp.
+            - Intern at Another Corp.
+
+            ## Education
+            - B.S. in Computer Science, Example University
+        </textarea>
+        <div id="resume-content"></div>
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
