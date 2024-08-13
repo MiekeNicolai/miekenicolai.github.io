@@ -42,3 +42,6 @@ French: Professional working proficiency (obtained B1 at language center Leuven,
 German: Elementary proficiency (obtained A2, B1 at language center Innsbruck)
 
 Spanish: Elementary proficiency (obtained A1, A2 and B1 at language center Leuven)
+
+
+
