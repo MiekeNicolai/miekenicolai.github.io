@@ -20,17 +20,32 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative; /* Added for positioning the copyright text */
         }
 
         .main-content {
             padding: 20px;
             color: black;
         }
+
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+            font-size: 12px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
     <header class="top-banner">
         <h1>Welcome to Mieke Nicolaï's website</h1>
+        <div class="copyright">
+            &copy; [Mieke Nicolaï]
+        </div>
     </header>
 
     <!-- Navigation Bar -->
@@ -42,11 +57,8 @@
     </nav>
 
     <!-- Main Content -->
-    <div>
+    <div class="main-content">
         <p>This is the main content area. The background here is light blue.</p>
     </div>
 </body>
 </html>
-
-
-
