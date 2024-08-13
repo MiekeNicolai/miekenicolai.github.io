@@ -2,8 +2,8 @@
 
 ## Experience
 
-2023 - present: PhD Student at Medical University of Innsbruck, Austria
-Deciphering the role of the healthy tissue microenvironment in NSCLC. 
+* 2023 - present: PhD Student at Medical University of Innsbruck, Austria
+* Deciphering the role of the healthy tissue microenvironment in NSCLC. 
 
 ## Education
 
