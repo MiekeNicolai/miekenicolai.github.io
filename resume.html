@@ -3,57 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Mieke Nicolaï</title>
+    <title>Mieke Nicolaï's Resume</title>
     <style>
         body {
-            background-color: #D7DBDD;
+            background-color: #D7DBDD; /* Light blue color */
             margin: 0;
             font-family: Arial, sans-serif;
+        }
+
+        .top-banner {
+            background-image: url('assets/background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
             color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
         }
 
         .main-content {
             padding: 20px;
             color: black;
-            background-color: white;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 40px auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <nav style="background-color: #333; padding: 10px 0; text-align: center;">
-        <a href="index.html" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
-        <a href="resume.html" style="color: white; margin: 0 15px; text-decoration: none;">Resume</a>
-        <a href="contact.html" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
-        <a href="extra.html" style="color: white; margin: 0 15px; text-decoration: none;">Extra</a>
+    <header class="top-banner">
+        <h1>Welcome to Mieke Nicolaï's website</h1>
+        <div class="copyright">
+            &copy; Mieke Nicolaï
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+        <a href="extra.html">Extra</a>
     </nav>
 
-    <div class="main-content">
-        <textarea id="markdown-content" style="display:none;">
-            # John Doe's Resume
-
-            ## Experience
-            - Software Developer at Example Corp.
-            - Intern at Another Corp.
-
-            ## Education
-            - B.S. in Computer Science, Example University
-        </textarea>
-        <div id="resume-content"></div>
+    <!-- Main Content -->
+    <div class="main-content" id="resume-content">
+        <!-- The Markdown content will be inserted here -->
     </div>
 
-
+    <!-- Include Marked and Axios libraries -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const markdownText = document.getElementById('markdown-content').value;
-            const htmlContent = marked(markdownText);
-            document.getElementById('resume-content').innerHTML = htmlContent;
+        document.addEventListener('DOMContentLoaded', function () {
+            axios.get('resume.md')
+                .then(response => {
+                    // Convert Markdown to HTML
+                    const htmlContent = marked(response.data);
+
+                    // Insert the HTML into the main content div
+                    document.getElementById('resume-content').innerHTML = htmlContent;
+                })
+                .catch(error => console.error('Error loading resume.md:', error));
         });
     </script>
-
 </body>
 </html>
