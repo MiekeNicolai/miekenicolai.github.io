@@ -52,6 +52,16 @@
             margin: 0 auto; /* Center container horizontally */
             background-color: transparent; /* Ensure background does not affect transparency */
         }
+
+        /* Rotate animation */
+        @keyframes rotateImage {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Apply rotation */
+        .rotate {
+            animation: rotateImage 1s ease-in-out;
         }
     </style>
 </head>
