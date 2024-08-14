@@ -20,7 +20,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative; /* Added for positioning the copyright text */
+            position: relative;
         }
 
         .main-content {
@@ -39,13 +39,8 @@
             border-radius: 3px;
         }
 
-        /* Specific style for photo.png */
-        #toggle-image.photo {
-            width: 50%; /* Make the image half as big */
-        }
-
-        img {
-            max-width: 50%;
+        #toggle-image {
+            max-width: 50%; /* Make the image half as big */
             height: auto;
             cursor: pointer;
         }
@@ -69,7 +64,7 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <img id="toggle-image" src="assets/photo.png" alt="Photo" class="photo" onclick="toggleImage()">
+        <img id="toggle-image" src="assets/photo.png" alt="Photo" onclick="toggleImage()">
     </div>
 
     <script>
@@ -77,10 +72,10 @@
             var image = document.getElementById('toggle-image');
             if (image.src.includes('photo.png')) {
                 image.src = 'assets/tsne_photo.png';
-                image.classList.remove('photo');
+                image.style.maxWidth = '100%'; // Reset size for tsne_photo.png
             } else {
                 image.src = 'assets/photo.png';
-                image.classList.add('photo');
+                image.style.maxWidth = '50%'; // Resize back for photo.png
             }
         }
     </script>
