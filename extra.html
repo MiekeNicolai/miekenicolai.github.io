@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miekelangelo - Extra</title>
+    <style>
+        body {
+            background-color: #D7DBDD; /* Light blue color */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .top-banner {
+            background-image: url('assets/background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Added for positioning the copyright text */
+        }
+
+        .main-content {
+            padding: 20px;
+            color: black;
+            text-align: center;
+        }
+
+        .copyright {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            color: white;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="top-banner">
+        <h1>Extra</h1>
+        <div class="copyright">
+            &copy; Mieke Nicolaï
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav style="background-color: #333; padding: 10px 0; text-align: center;">
+        <a href="index.html" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+        <a href="resume.html" style="color: white; margin: 0 15px; text-decoration: none;">Resume</a>
+        <a href="contact.html" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
+        <a href="extra.html" style="color: white; margin: 0 15px; text-decoration: none;">Extra</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <img id="toggle-image" src="assets/photo.png" alt="Photo" onclick="toggleImage()">
+    </div>
+
+    <script>
+        function toggleImage() {
+            var image = document.getElementById('toggle-image');
+            if (image.src.includes('photo.png')) {
+                image.src = 'assets/tsne_photo.png';
+            } else {
+                image.src = 'assets/photo.png';
+            }
+        }
+    </script>
+</body>
+</html>
