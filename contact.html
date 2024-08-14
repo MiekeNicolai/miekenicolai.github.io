@@ -1,4 +1,4 @@
--n<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,18 @@
             text-align: center;
         }
 
-        .linkedin-link {
+        .extra-panel {
+            padding: 20px;
+            color: black;
+            background-color: white;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 20px auto 40px; /* Margin to create space below */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .linkedin-link, .researchgate-button {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
@@ -34,7 +45,15 @@
             font-size: 16px;
         }
 
-        .linkedin-link:hover {
+        .linkedin-link:hover, .researchgate-button:hover {
+            background-color: #005582; /* Darker blue on hover */
+        }
+        
+        .researchgate-button {
+            background-color: #0073B1; /* ResearchGate blue color */
+        }
+        
+        .researchgate-button:hover {
             background-color: #005582; /* Darker blue on hover */
         }
     </style>
@@ -52,6 +71,14 @@
         <p>You can reach me through LinkedIn:</p>
         <a href="https://www.linkedin.com/in/mieke-nicolaï/" class="linkedin-link" target="_blank">
             Visit My LinkedIn Profile
+        </a>
+    </div>
+    
+    <!-- New Panel for ResearchGate -->
+    <div class="extra-panel">
+        <p>Check out my ResearchGate profile:</p>
+        <a href="https://www.researchgate.net/profile/Mieke-Nicolai" class="researchgate-button" target="_blank">
+            Visit My ResearchGate Profile
         </a>
     </div>
 </body>
