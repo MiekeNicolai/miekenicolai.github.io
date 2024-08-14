@@ -84,7 +84,7 @@
             if (image.src.includes('photo.png')) {
                 image.src = 'assets/tsne_photo.png';
                 image.style.maxWidth = '100%'; // Reset size for tsne_photo.png
-            } else {
+            } else if (image.src.includes('tsne_photo.png')){
                 image.src = 'assets/photo.png';
                 image.style.maxWidth = '10%'; // Resize back for photo.png
             }
