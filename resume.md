@@ -37,7 +37,7 @@ Dutch: Mother tongue
 
 English: Professional working proficiency
 
-French: Professional working proficiency (obtained B1 at language center Leuven, improved during exchange in Bordeaux)
+French: Professional working proficiency (obtained B1 at language center Leuven, improved during exchange in Bordeaux and being a leader in a French speaking scouts)
 
 German: Elementary proficiency (obtained A2, B1 at language center Innsbruck)
 
