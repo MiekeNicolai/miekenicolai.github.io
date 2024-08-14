@@ -81,14 +81,18 @@
         function toggleImage() {
             var image = document.getElementById('toggle-image');
             var currentSrc = image.src.split('/').pop(); // Extract file name from the URL
-            if (image.src.includes('photo.png')) {
+            image.classList.remove('rotate'); // Remove previous rotate class if any
+            
+            if (currentSrc === 'photo.png') {
                 image.src = 'assets/tsne_photo.png';
                 image.style.maxWidth = '100%'; // Reset size for tsne_photo.png
-            } else if (image.src.includes('tsne_photo.png')){
+                image.classList.add('rotate'); // Add rotation class
+            } else if (currentSrc === 'tsne_photo.png') {
                 image.src = 'assets/photo.png';
                 image.style.maxWidth = '10%'; // Resize back for photo.png
             }
         }
     </script>
+
 </body>
 </html>
